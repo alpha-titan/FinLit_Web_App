@@ -1,0 +1,58 @@
+<mat-nav-list *ngIf="userDetails">
+    <div class="profile-card" *ngIf="userDetails">
+        <div class="header" >
+            <h2 *ngIf="userDetails">{{getUsername()}}</h2>
+            <h4 *ngIf="userDetails">{{userDetails.email}}</h4>
+        </div>
+        <img src="assets/images/Users.png" alt="Sachin Ak" *ngIf="!userDetails.image">
+        <img src="assets/images/{{getImageName()}}" alt="Sachin Ak" *ngIf="userDetails.image">
+
+    </div>
+     
+    <mat-divider></mat-divider>
+    <h2 matSubheader>Explore</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>dashboard</mat-icon>
+        Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+        <mat-icon>book</mat-icon>
+        Learning</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/stocks">
+        <mat-icon>trending_up</mat-icon>
+        Stocks</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/addarticle" *ngIf="roleIsAdmin()||roleIsAnalyst()">
+            <mat-icon>note_add</mat-icon>
+            Add Article
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/users" *ngIf="roleIsAdmin()">
+            <mat-icon>people</mat-icon>
+            Users
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles" *ngIf="roleIsAdmin()||roleIsAnalyst()">
+            <mat-icon>build</mat-icon>
+            Manage Articles
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Messages" *ngIf="roleIsAdmin()">
+            <mat-icon>message</mat-icon>
+            Manage Messages
+        </a>
+       
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Help</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>import_contacts</mat-icon>
+        Contacts
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>contact_phone</mat-icon>
+        Leads
+    </a>
+   
+
+
+</mat-nav-list>
+

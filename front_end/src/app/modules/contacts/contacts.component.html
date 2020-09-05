@@ -1,0 +1,45 @@
+
+  <form #AddContactForm="ngForm" style="text-align:center;" (ngSubmit)="AddContactForm.valid && onSubmit(AddContactForm)">
+  
+   <br>       
+   <label for="name"  style="text-align:center;">Name</label>
+  <br>
+    <input type="text" #name="ngModel" [(ngModel)]="userService.selectedContact.name" name="name" placeholder="Name"
+      required >
+    <div *ngIf="AddContactForm.submitted && name.errors">
+      <label *ngIf="name.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="name.errors.pattern" class="validation-message">Invalid name .</label>
+    </div>
+    <br>
+    <label for="email">Email</label>
+<br>
+    <input type="text" #email="ngModel" [(ngModel)]="userService.selectedContact.email" name="email" placeholder="Email"
+    required >
+  <div *ngIf="AddContactForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+  </div>
+  
+    <br>
+    <label for="query">Phone Number</label>
+    <br>
+        <input type="text"  #body="ngModel" [(ngModel)]="userService.selectedContact.phoneNumber" name="phoneNumber"
+          placeholder="Phone Number" >
+          <br>
+    <label for="query">Query</label>
+<br>
+    <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="userService.selectedContact.query" name="query"
+      placeholder="Query"required>
+ 
+   
+  
+    <input type="submit" value="Send Message">
+  </form>
+
+  <!-- Success message -->
+  <div class="success" *ngIf="showSuccessMessage">
+    Saved Successfully
+  </div>
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+  

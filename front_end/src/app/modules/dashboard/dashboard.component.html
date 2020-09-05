@@ -1,0 +1,17 @@
+<h2>Articles By Financial Analysts</h2>
+<div class="container" >
+    <div class="row">
+     <div  *ngFor="let article of articles">
+        <div class="col-4" *ngIf="article.role==='Financial Analyst'">
+          
+<div class="card" style="width: 18rem;">
+  <img src="assets/images/in.jpg" width="100%" alt="Sachin Ak" *ngIf="article.image.length===0">
+
+    <img *ngIf="article.image" src={{getImageName(article.image)}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">{{article.title}}</h3>
+      <p class="card-text">{{article.body}}</p>
+      <a href="#" class="btn btn-primary" style="background-color:#4156b5;" routerLink="/stocks">back</a>
+    </div></div>
+  </div>
+</div>

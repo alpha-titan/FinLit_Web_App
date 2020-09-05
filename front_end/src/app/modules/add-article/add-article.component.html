@@ -1,0 +1,50 @@
+<div *ngIf="userDetails">
+  <form #AddArticleForm="ngForm" *ngIf="roleIsAdmin()||roleIsAnalyst" style="text-align:center;" (ngSubmit)="AddArticleForm.valid && onSubmit(AddArticleForm)">
+    <input type="hidden" [value]="userDetails.role"  #role="ngModel" name="role" [(ngModel)]="userDetails.role">
+    <input type="hidden" [value]="userDetails._id"  #id="ngModel" name="id" [(ngModel)]="userDetails._id">
+
+    <h4>Select an Image</h4>
+    <input type="file" name="image"#image="ngModel" [(ngModel)]="userService.selectedArticle.image"
+          ng2FileSelect [uploader]="uploader" accept="image/x-png,image/gif,image/jpeg" />
+   
+   <br>       
+   <label for="title"  style="text-align:center;">Title</label>
+  <br>
+    <input type="text" #title="ngModel" [(ngModel)]="userService.selectedArticle.title" name="title" placeholder="Title"
+      required [ngClass]="{'invalid-textbox' :AddArticleForm.submitted && !title.valid }">
+    <div *ngIf="AddArticleForm.submitted && title.errors">
+      <label *ngIf="title.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="title.errors.pattern" class="validation-message">Invalid title .</label>
+    </div>
+    <br>
+    <label for="category"  style="text-align:center;">Category</label>
+
+    <select class="form-control" style="width:80%;margin-left: 120px;background-color: #f6f6f6;" id="exampleFormControlSelect1" #category="ngModel" [(ngModel)]="userService.selectedArticle.category"
+    name="category" placeholder="category" >
+    <option value="Investing">Investing</option>
+    <option value="Trading">Trading</option>
+
+    </select>
+    <br>
+    <label for="body">Body</label>
+<br>
+    <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="userService.selectedArticle.body" name="body"
+      placeholder="Body" minlength="20" required
+      [ngClass]="{'invalid-textbox' :AddArticleForm.submitted && !body.valid }">
+    <div *ngIf="AddArticleForm.submitted && body.errors">
+      <label *ngIf="body.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="body.errors.minlength" class="validation-message">Enter atleast 20 characters.</label>
+    </div>
+   
+  
+    <input type="submit" value="Add Article" (click)="uploader.uploadAll()">
+  </form>
+
+  <!-- Success message -->
+  <div class="success" *ngIf="showSuccessMessage">
+    Saved Successfully
+  </div>
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+</div>

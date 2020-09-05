@@ -1,0 +1,42 @@
+<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/login" routerLinkActive="active">Sign In</h2>
+&nbsp;<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/signup" routerLinkActive="active"> Sign Up</h2>
+<div>
+    <img src="../../../assets/images/avatar.svg" alt="User Icon" id="icon">
+  </div>
+  <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+  
+    <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+      required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+    <div *ngIf="signUpForm.submitted && email.errors">
+      <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+    </div>
+    <br>
+    <select class="form-control" style="width:80%;margin-left: 47px;background-color: #f6f6f6;" id="exampleFormControlSelect1" #role="ngModel" [(ngModel)]="userService.selectedUser.role"
+    name="role" placeholder="Role" >
+    <option value="Financial Analyst">Financial Analyst</option>
+    <option value="User">User</option>
+
+    </select>
+
+    <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password"
+      placeholder="Password" minlength="4" required
+      [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+    <div *ngIf="signUpForm.submitted && password.errors">
+      <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+    </div>
+   
+    
+    <input type="submit" value="Sign Up">
+  </form>
+  <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+
+  <!-- Success message -->
+  <div class="success" *ngIf="showSuccessMessage">
+    Saved Successfully
+  </div>
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+  

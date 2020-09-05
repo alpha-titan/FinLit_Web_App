@@ -1,0 +1,27 @@
+<div *ngIf="userDetails">
+<table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
+    <thead >
+      <tr style="background-color:#4156B5;">
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Body</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{contact.name}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.phoneNumber}}</td>
+        <td>{{contact.query}}</td>
+
+
+      
+
+      </tr>
+      
+    </tbody>
+  </table>
+  <h4 *ngIf="!roleIsAdmin()">You are not allowed</h4> 
+</div>

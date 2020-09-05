@@ -1,0 +1,22 @@
+<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/login" routerLinkActive="active">Sign In</h2>
+&nbsp;<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/signup" routerLinkActive="active"> Sign Up</h2>
+<div>
+  <img src="../../../assets/images/avatar.svg" alt="User Icon" id="icon">
+</div>
+<form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+  <input type="text" name="username" required placeholder="Email" #username="ngModel"
+    [(ngModel)]="model.username">
+ 
+  <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password" placeholder="Password"
+    minlength="4" required [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
+  <div *ngIf="signInForm.submitted && password.errors?.minlength">
+    <label class="validation-message">Minimum 4 characters.</label>
+  </div>
+  <input type="submit" value="Sign In">
+</form>
+
+<p>Didnt have an account? <a routerLink="/signup">Register</a></p>
+
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>

@@ -1,0 +1,27 @@
+<div *ngIf="userDetails">
+<input type="text" [(ngModel)]="searchText" placeholder="Type to search ...">
+<table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
+    <thead >
+      <tr style="background-color:#4156B5;">
+        <th scope="col">Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Manage</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | ngSearchPipe:searchText">
+        <td>{{user._id}}</td>
+        <td>{{getUsername(user.email)}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+        <td><input type="submit" (click)="deleteUser(user._id)" value="delete"></td>
+
+
+      </tr>
+      
+    </tbody>
+  </table>
+  <h4 *ngIf="!roleIsAdmin()">You are not allowed</h4> </div>

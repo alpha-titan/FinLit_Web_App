@@ -1,0 +1,13 @@
+<div class="container">
+<div class="stocks-div">
+  <div *ngFor="let stock of stocks">
+      <div class="stock-div" (click)="stockClicked(stock.symbol)">
+          <span class="symbol"  >{{ stock.symbol }}</span>
+          <span class="company-name">({{ stock.name }})</span>
+      </div>
+  </div>
+</div>
+<div class="ticker-info-div">
+  <ticker-info [ticker]="selectedStock" *ngIf="selectedStock !== ''"></ticker-info>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<div *ngIf="userDetails">
+<table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
+    <thead >
+      <tr style="background-color:#4156B5;">
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Edit</th>
+
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td>{{article._id}}</td>
+        <td>{{article.title}}</td>
+        <td>{{article.category}}</td>
+        <td><input type="submit"  routerLink="/editArticle/{{article._id}}" value="Edit" *ngIf="article.role==='Admin'"></td>
+
+        <td><input type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+<table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAnalyst()">
+  <thead >
+    <tr style="background-color:#4156B5;">
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Edit</th>
+
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let article of articles">
+   
+    <tr *ngIf="article.id===userDetails._id">
+      <td>{{article._id}}</td>
+      <td>{{article.title}}</td>
+      <td>{{article.category}}</td>
+      <td><input type="submit"  routerLink="/editArticle/{{article._id}}" value="Edit"></td>
+
+      <td><input type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
