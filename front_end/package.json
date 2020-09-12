@@ -27,6 +27,7 @@
     "highcharts": "^8.1.2",
     "highcharts-angular": "^2.7.0",
     "ng-search-pipe": "^1.0.2",
+    "ng-validate-equal": "^1.0.4",
     "ng2-file-upload": "^1.4.0",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.5",

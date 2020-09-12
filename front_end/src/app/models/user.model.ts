@@ -3,5 +3,5 @@ export class User {
     password: string;
     image:string;
     role:string;
-
+    confirmpassword:string;
 }

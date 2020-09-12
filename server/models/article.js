@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-
+const Comment = require('./comment')
 var articleSchema = new mongoose.Schema({
     id:{
     type:String
@@ -25,7 +25,10 @@ var articleSchema = new mongoose.Schema({
         type: String,
         default:"in.png"
     },
-  
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'Comment', index: true
+    }],
+
     saltSecret: String
 });
 mongoose.model('Article', articleSchema);

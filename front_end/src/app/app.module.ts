@@ -29,7 +29,11 @@ import { MatLabel } from '@angular/material/form-field';
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component';
-import { NgSearchPipe } from 'ng-search-pipe'; // import here
+import { NgSearchPipe } from 'ng-search-pipe';
+import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
+import { EditCommentComponent } from './modules/article-details/edit-comment/edit-comment.component'; // import here
+import { ValidateEqualModule } from 'ng-validate-equal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,9 @@ import { NgSearchPipe } from 'ng-search-pipe'; // import here
     StocksComponent,
     TradingComponent,
     EditArticleComponent,
-    ManageContactsComponent
+    ManageContactsComponent,
+    ArticleDetailsComponent,
+    EditCommentComponent
   ],
   imports: [
     FormsModule,
@@ -56,7 +62,8 @@ import { NgSearchPipe } from 'ng-search-pipe'; // import here
     DefaultModule,
     ToastrModule.forRoot(), // ToastrModule added,
     FileUploadModule,
-    NgSearchPipe
+    NgSearchPipe,
+    ValidateEqualModule
 
  
   ],

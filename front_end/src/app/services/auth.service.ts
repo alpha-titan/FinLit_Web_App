@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { User } from '../models/user.model';
 import { Article } from '../models/article.model';
 import { Contact } from '../models/contact.model';
+import { Comment } from '../models/comment.model';
 
 
 @Injectable({
@@ -12,6 +13,8 @@ export class AuthService {
   selectedUser: User= {
     email: '',
     password: '',
+    confirmpassword: '',
+
     image:'',
     role:''
   };
@@ -30,6 +33,10 @@ export class AuthService {
     phoneNumber:'',
     query:''
   };
+  selectComment:Comment={
+    username:'',
+    body:''
+  }
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }
 
@@ -83,6 +90,8 @@ export class AuthService {
   }
   updateArticle(article: Article, _id: String) {
     return this.http.put('http://localhost:3000/api/updateArticle/' + _id, article);
+  } updateComment(comment: Comment, _id: String) {
+    return this.http.put('http://localhost:3000/api/updateComment/' + _id, comment);
   }
   getUsers() {
     return this.http.get<User[]>("http://localhost:3000/api/users")
@@ -101,11 +110,23 @@ export class AuthService {
     return this.http.get<Article>("http://localhost:3000/api/article/"+id)
 
   }
+  getComment(id:String) {
+    return this.http.get<Comment>("http://localhost:3000/api/comment/"+id)
+
+  }
   deleteArticle(id:String){
     return this.http.delete<Article>("http://localhost:3000/api/deleteArticle/"+id)
   }
   deleteUser(id:String){
     return this.http.delete<User>("http://localhost:3000/api/deleteUser/"+id)
   }
+  deleteComment(id:String){
+    return this.http.delete<Comment>("http://localhost:3000/api/deleteComment/"+id)
+  }
+  addComment(comment:Comment,id:string){
+    return this.http.post("http://localhost:3000/api/addComment/"+id,comment);
+
+  }
+  
 
 }

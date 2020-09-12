@@ -1,0 +1,39 @@
+<div *ngIf="userDetails && articleDetails">
+<div style="text-align: center;" >
+    <img style="width:50%" src="assets/images/in.jpg" width="100%" alt="Sachin Ak" *ngIf="!articleDetails.image">
+
+    <img  style="width:50%"  *ngIf="articleDetails.image" src={{getImageName(articleDetails.image)}} class="card-img-top" alt="...">            
+    <h1>{{articleDetails.title}}</h1>
+   
+    <h3>{{articleDetails.body}}</h3>
+
+<form #AddArticleForm="ngForm"  style="text-align:center;" (ngSubmit)="AddArticleForm.valid && onSubmit(AddArticleForm)">
+    <input type="hidden" [value]="userDetails.email"  #username="ngModel" name="username" [(ngModel)]="userDetails.email">
+    <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="userService.selectComment.body" name="body"
+    placeholder="Body" minlength="20" required
+    [ngClass]="{'invalid-textbox' :AddArticleForm.submitted && !body.valid }">
+  <div *ngIf="AddArticleForm.submitted && body.errors">
+    <label *ngIf="body.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="body.errors.minlength" class="validation-message">Enter atleast 20 characters.</label>
+  </div>
+ 
+
+  <input type="submit" value="Add Comment">
+   
+   <br>     </form>  
+</div>
+
+<h2>Comments</h2>
+    <div style="margin:2px ;"
+    *ngFor="let comment of articleDetails.comments">
+<strong><h3 style="text-decoration: underline #4156b5;font-weight: 600;">{{getUsername(comment.username)}}</h3></strong>
+<p>{{comment.body}}</p>
+<a *ngIf="userDetails.email===comment.username" routerLink="edit-comment/{{comment._id}}">edit</a>
+<input *ngIf="userDetails.email===comment.username" type="submit" (click)="deleteComment(comment._id)" value="delete">
+</div>
+
+    
+
+
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+<div *ngIf="userDetails && commentDetails">
+  <form style="text-align: center;" #editCommentForm="ngForm" (ngSubmit)="editCommentForm.valid && onSubmit(editCommentForm)" *ngIf="userDetails.email===comment.username">
+
+      
+    <h4>Body</h4>
+        <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="commentDetails.body" name="body"
+          placeholder="Body" minlength="20" required [value]="commentDetails.body"
+          [ngClass]="{'invalid-textbox' :editCommentForm.submitted && !body.valid }">
+       
+      
+  
+    <input type="submit" value="Edit">
+  </form>
+</div>
