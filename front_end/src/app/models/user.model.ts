@@ -3,5 +3,7 @@ export class User {
     password: string;
     image:string;
     role:string;
+    username:string;
+
     confirmpassword:string;
 }

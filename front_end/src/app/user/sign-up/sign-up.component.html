@@ -1,7 +1,7 @@
 <h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/login" routerLinkActive="active">Sign In</h2>
 &nbsp;<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/signup" routerLinkActive="active"> Sign Up</h2>
 <div>
-    <img src="../../../assets/images/Users.png" alt="User Icon" id="icon">
+    <img src="../../../assets/images/avatar.svg" alt="User Icon" id="icon">
   </div>
   <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
   
@@ -12,6 +12,13 @@
       <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
     </div>
     <br>
+    <input type="text" #username="ngModel" [(ngModel)]="userService.selectedUser.username" name="username" placeholder="Username"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !username.valid }">
+  <div *ngIf="signUpForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+  <br>
     <select class="form-control" style="width:80%;margin-left: 47px;background-color: #f6f6f6;" id="exampleFormControlSelect1" #role="ngModel" [(ngModel)]="userService.selectedUser.role"
     name="role" placeholder="Role" >
     <option value="Financial Analyst">Financial Analyst</option>

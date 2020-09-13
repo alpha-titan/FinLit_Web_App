@@ -1,12 +1,12 @@
-
+<div *ngIf="userDetails">
   <form style="text-align: center;" #editProfileForm="ngForm" (ngSubmit)="editProfileForm.valid && onSubmit(editProfileForm)">
     <h4>Select an Image</h4>
     <input type="file" name="image" value="userDetails.email" #image="ngModel" [(ngModel)]="userDetails.image"
           ng2FileSelect [uploader]="uploader" accept="image/x-png,image/gif,image/jpeg" />
       
         <br>
-          <h4>Email</h4>
-    <input type="text" #email="ngModel" [(ngModel)]="userDetails.email" name="email" placeholder="email">
+          <h4>Username</h4>
+    <input type="text" #username="ngModel" [value]="userDetails.username" [(ngModel)]="userDetails.username" name="username" placeholder="username">
     <h4>Password</h4>
 
     <input type="password" #password="ngModel" [(ngModel)]="userDetails.password" name="password" placeholder="password">
@@ -14,4 +14,4 @@
   
     <input type="submit" value="Edit" (click)="uploader.uploadAll()">
   </form>
-  
+</div>

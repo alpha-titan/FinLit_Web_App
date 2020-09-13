@@ -19,17 +19,21 @@ module.exports.register = (req, res, next) => {
     user.password = req.body.password;
     user.image=req.body.image;
     user.role=req.body.role;
+    user.username=req.body.username;
 
 
     user.save((err, doc) => {
         if (!err)
             res.send(doc);
         else {
-            if (err.code == 11000)
-                res.status(422).send(['Duplicate email adrress found.']);
-            else
-                return next(err);
-        }
+            if (err.name === 'MongoError' && err.code === 11000) {
+                // Duplicate username
+                return res.status(500).send({ succes: false, message: 'User already exist!' });
+              }
+        
+              // Some other error
+              return res.status(500).send(err);
+            }
 
     });
 }
@@ -186,7 +190,7 @@ module.exports.userProfile = (req, res, next) => {
             }
             else {
 
-                return res.status(200).json({ status: true, user: _.pick(user, ['role','_id', 'email','image']) });
+                return res.status(200).json({ status: true, user: _.pick(user, ['username','role','_id', 'email','image']) });
             }
         }
         );

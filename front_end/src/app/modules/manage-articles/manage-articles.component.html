@@ -34,7 +34,7 @@
       <th scope="col">Delete</th>
     </tr>
   </thead>
-  <tbody *ngFor="let article of articles">
+  <tbody class = "styles" *ngFor="let article of articles">
    
     <tr *ngIf="article.id===userDetails._id">
       <td>{{article._id}}</td>
@@ -42,7 +42,7 @@
       <td>{{article.category}}</td>
       <td><input type="submit"  routerLink="/editArticle/{{article._id}}" value="Edit"></td>
 
-      <td><input type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
+      <td><input class="inp" type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
 
     </tr>
   </tbody>

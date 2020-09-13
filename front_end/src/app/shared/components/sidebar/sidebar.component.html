@@ -1,7 +1,7 @@
 <mat-nav-list *ngIf="userDetails">
     <div class="profile-card" *ngIf="userDetails">
         <div class="header" >
-            <h2 *ngIf="userDetails">{{getUsername()}}</h2>
+            <h2 *ngIf="userDetails">{{userDetails.username}}</h2>
             <h4 *ngIf="userDetails">{{userDetails.email}}</h4>
         </div>
         <img src="assets/images/Users.png" alt="Sachin Ak" *ngIf="!userDetails.image">

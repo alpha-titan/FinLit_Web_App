@@ -5,11 +5,15 @@ const jwt = require('jsonwebtoken');
 
 var userSchema = new mongoose.Schema({
    
-    email: {
+    username: {
+        type: String,
+        required: 'Username can\'t be empty'
+        },email: {
         type: String,
         required: 'Email can\'t be empty',
-        unique: true
-    },image: {
+        unique: true, index: true
+    },
+    image: {
         type: String,
         
     },
@@ -42,6 +46,7 @@ userSchema.pre('save', function (next) {
         });
     });
 });
+
 userSchema.pre('findByIdAndUpdate', function (next) {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUserData.password, salt, (err, hash) => {
