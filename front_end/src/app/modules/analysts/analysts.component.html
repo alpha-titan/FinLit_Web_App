@@ -1,0 +1,26 @@
+<div *ngIf="userDetails">
+    <table class="table" style="background-color: antiquewhite;" *ngIf="!roleIsAnalyst()">
+        <thead >
+          <tr style="background-color:#4156B5;">
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact</th>
+
+    
+          </tr>
+        </thead>
+        <tbody *ngFor="let user of users">
+          <tr *ngIf="user.role==='Financial Analyst'">
+            <td>{{user._id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td><input type="submit" (click)="deleteUser(user._id)" value="Message"></td>
+
+        
+    
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

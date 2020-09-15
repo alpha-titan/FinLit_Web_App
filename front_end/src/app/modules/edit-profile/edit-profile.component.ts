@@ -53,7 +53,7 @@ export class EditProfileComponent implements OnInit {
         form.resetForm();
         location.reload();
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
 
 
       },

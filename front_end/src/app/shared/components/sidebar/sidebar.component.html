@@ -12,42 +12,48 @@
     <mat-divider></mat-divider>
     <h2 matSubheader>Explore</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/dashboard">
         <mat-icon>dashboard</mat-icon>
         Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/posts">
         <mat-icon>book</mat-icon>
         Learning</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/stocks">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/stocks">
         <mat-icon>trending_up</mat-icon>
         Stocks</a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/addarticle" *ngIf="roleIsAdmin()||roleIsAnalyst()">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/Analysts" *ngIf="!roleIsAnalyst()">
+            <mat-icon>people</mat-icon>
+            Analysts</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/addarticle" *ngIf="roleIsAdmin()||roleIsAnalyst()">
             <mat-icon>note_add</mat-icon>
             Add Article
         </a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/users" *ngIf="roleIsAdmin()">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/users" *ngIf="roleIsAdmin()">
             <mat-icon>people</mat-icon>
             Users
         </a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles" *ngIf="roleIsAdmin()||roleIsAnalyst()">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/articles" *ngIf="roleIsAdmin()||roleIsAnalyst()">
             <mat-icon>build</mat-icon>
             Manage Articles
         </a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Messages" *ngIf="roleIsAdmin()">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/Messages" *ngIf="roleIsAdmin()">
             <mat-icon>message</mat-icon>
             Manage Messages
         </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/mymessages">
+            <mat-icon>message</mat-icon>
+My Messages        </a>
        
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Help</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/contacts">
         <mat-icon>import_contacts</mat-icon>
         Contacts
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/contacts">
         <mat-icon>contact_phone</mat-icon>
         Leads
     </a>

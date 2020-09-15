@@ -18,9 +18,12 @@ let storage = multer.diskStorage({
 let upload = multer({
   storage: storage
 });
+router.delete('/deleteMessage/:_id', ctrlUser.deleteMessage);
 
 router.post('/register', ctrlUser.register);
 router.post('/send', ctrlUser.sendMessage);
+router.post('/sendMessage/:_id', ctrlUser.sendMessageAnalyst);
+router.get('/user/:_id', ctrlUser.userDetails);
 
 router.get('/users', ctrlUser.getUsers);
 router.post('/addArticle', ctrlUser.addArticle);
@@ -28,6 +31,8 @@ router.delete('/deleteArticle/:_id', ctrlUser.deleteArticle);
 router.delete('/deleteUser/:_id', ctrlUser.deleteUser);
 router.get('/article/:_id', ctrlUser.articleDetails);
 router.get('/contacts', ctrlUser.getMessages);
+router.get('/messages', ctrlUser.getMessagesAnalyst);
+
 router.post('/addComment/:_id', ctrlUser.addComment);
 router.get('/comment/:_id', ctrlUser.commentDetails);
 router.delete('/deleteComment/:_id', ctrlUser.deleteComment);

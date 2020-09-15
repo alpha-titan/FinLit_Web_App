@@ -59,7 +59,7 @@ export class EditArticleComponent implements OnInit {
 
         form.resetForm();
 
-        this.router.navigate(['/articles']);
+        this.router.navigate(['home/articles']);
 
 
       },

@@ -11,7 +11,7 @@
 
       </tr>
     </thead>
-    <tbody class = "styles">
+    <tbody>
       <tr *ngFor="let user of users | ngSearchPipe:searchText">
         <td>{{user._id}}</td>
         <td>{{user.username}}</td>

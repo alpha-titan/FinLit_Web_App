@@ -1,0 +1,74 @@
+#button{
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 0%;
+    
+}
+*{
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.Homepage{
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    padding-top: 10%;
+    width: 95%;
+    padding-bottom:5% ;
+    
+}.button1{
+    background-color: white;
+    border: none;
+    color: black;
+    border-radius: 0%;
+    width: 70%;
+    height: 50px;
+    font-weight: lighter;
+    
+}
+.button2{
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 0%;
+    width: 90%;
+    text-align: left;
+    height: 50px;
+    font-weight: lighter;
+    float: left;
+    
+}
+.button3{
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 0%;
+    width: 90%;
+    text-align: center;
+    height: 40px;
+    font-weight: lighter;
+    
+}.Homepage2{
+    background-color:#F4F4F4;
+    background-size: cover;
+    padding-top: 10%;
+    width: 95%;
+    padding-bottom:5% ;
+    
+}.button4{
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 0%;
+    width: 90%;
+    text-align: center;
+    height: 50px;
+    font-weight: lighter;
+    
+}
+@media only screen and (max-width:768px){
+    .img{
+        display: none;
+    }
+}

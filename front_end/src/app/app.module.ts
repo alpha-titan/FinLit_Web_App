@@ -33,6 +33,11 @@ import { NgSearchPipe } from 'ng-search-pipe';
 import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
 import { EditCommentComponent } from './modules/article-details/edit-comment/edit-comment.component'; // import here
 import { ValidateEqualModule } from 'ng-validate-equal';
+import { AnalystsComponent } from './modules/analysts/analysts.component';
+import { MessageComponent } from './modules/message/message.component';
+import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
+import { LandingComponent } from './landing/landing.component';
+import { RespondComponent } from './modules/analyst-messages/respond/respond.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     EditArticleComponent,
     ManageContactsComponent,
     ArticleDetailsComponent,
-    EditCommentComponent
+    EditCommentComponent,
+    AnalystsComponent,
+    MessageComponent,
+    AnalystMessagesComponent,
+    LandingComponent,
+    RespondComponent
   ],
   imports: [
     FormsModule,

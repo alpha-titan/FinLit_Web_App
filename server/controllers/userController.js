@@ -8,6 +8,7 @@ bodyParser = require('body-parser');
 const User = mongoose.model('User');
 const Article = mongoose.model('Article');
 const Comment = mongoose.model('Comment');
+const Message = mongoose.model('Message');
 
 const Contact = mongoose.model('Contact');
 
@@ -37,6 +38,30 @@ module.exports.register = (req, res, next) => {
 
     });
 }
+module.exports.sendMessageAnalyst = (req, res, next) => {
+    var message = new Message();
+    message.name = req.body.name;
+    message.id = req.params._id;
+
+    message.phoneNumber = req.body.phoneNumber;
+
+    message.email = req.body.email;
+    message.query = req.body.query;
+
+  
+
+    message.save((err, doc) => {
+        if (!err)
+            res.send(doc);
+        else {
+            if (err.code == 11000)
+                res.status(422).send(err);
+            else
+                return next(err);
+        }
+
+    });
+}
 module.exports.sendMessage = (req, res, next) => {
     var contact = new Contact();
     contact.name = req.body.name;
@@ -61,6 +86,18 @@ module.exports.sendMessage = (req, res, next) => {
 }
 module.exports.deleteArticle=(req,res,next)=>{
     Article.findByIdAndDelete(
+        req.params._id,
+        function (error, result) {
+            if (error) {
+                throw error;
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    );
+}
+module.exports.deleteMessage=(req,res,next)=>{
+    Message.findByIdAndDelete(
         req.params._id,
         function (error, result) {
             if (error) {
@@ -122,6 +159,21 @@ module.exports.getMessages=(req,res,next)=>{
         });
 
         res.send(contactMap);
+
+    });
+}
+module.exports.getMessagesAnalyst=(req,res,next)=>{
+    Message.find({})
+    .exec(function (err, messages) {
+
+        var messageMap = [];
+
+        messages.forEach(function (message) {
+
+            messageMap.push(message);
+        });
+
+        res.send(messageMap);
 
     });
 }
@@ -274,6 +326,19 @@ module.exports.commentDetails = (req, res, next) => {
             }
             else {
                 return res.status(200).json({ status: true, comment: _.pick(comment, ['body','username', '_id']) });
+            }
+        }
+        );
+}
+module.exports.userDetails = (req, res, next) => {
+    User.findOne({ _id: req.params._id })
+        .exec(function (err, user) {
+            if (!user) {
+
+                return res.status(404).json({ status: false, message: 'User record not found.', err: err, id: req._id });
+            }
+            else {
+                return res.status(200).json({ status: true, user: _.pick(user, ['_id','username', 'email','image']) });
             }
         }
         );

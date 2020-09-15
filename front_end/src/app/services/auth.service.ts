@@ -4,6 +4,7 @@ import { User } from '../models/user.model';
 import { Article } from '../models/article.model';
 import { Contact } from '../models/contact.model';
 import { Comment } from '../models/comment.model';
+import { Message } from '../models/message.model';
 
 
 @Injectable({
@@ -33,6 +34,13 @@ export class AuthService {
     email: '',
     phoneNumber:'',
     query:''
+  };
+  selectedMessage: Message= {
+    name: '',
+    email: '',
+    phoneNumber:'',
+    query:'',
+    id:''
   };
   selectComment:Comment={
     username:'',
@@ -102,6 +110,10 @@ export class AuthService {
     return this.http.get<Contact[]>("http://localhost:3000/api/contacts")
 
   }
+  getMessages() {
+    return this.http.get<Message[]>("http://localhost:3000/api/messages")
+
+  }
   getArticles() {
     return this.http.get<Article[]>("http://localhost:3000/api/articles")
 
@@ -109,6 +121,10 @@ export class AuthService {
   }
   getArticle(id:String) {
     return this.http.get<Article>("http://localhost:3000/api/article/"+id)
+
+  }
+  getUser(id:String) {
+    return this.http.get<User>("http://localhost:3000/api/user/"+id)
 
   }
   getComment(id:String) {
@@ -124,10 +140,16 @@ export class AuthService {
   deleteComment(id:String){
     return this.http.delete<Comment>("http://localhost:3000/api/deleteComment/"+id)
   }
+  deleteMessage(id:String){
+    return this.http.delete<Comment>("http://localhost:3000/api/deleteMessage/"+id)
+  }
   addComment(comment:Comment,id:string){
     return this.http.post("http://localhost:3000/api/addComment/"+id,comment);
 
   }
-  
+  sendMessage(message:Message,id:string){
+    return this.http.post("http://localhost:3000/api/sendMessage/"+id,message);
+
+  }
 
 }

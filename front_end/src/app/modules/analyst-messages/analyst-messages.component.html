@@ -1,0 +1,27 @@
+<div *ngIf="userDetails&&messages">
+<h2>My Messages</h2>
+<div class="container">
+    <div class="row">
+     <div  *ngFor="let message of messages">
+        <div class="col-4" *ngIf="message.id===userDetails._id">
+          
+<div class="card" style="width: 18rem;box-shadow: 5px 10px whitesmoke;">
+
+    <div class="card-body" style="text-align: center;">
+        <h3 style="color:#4156b5 ;font-weight: 800;">Email</h3>
+      <h3 class="card-title" style="font-size: larger;">{{message.email}}</h3>
+      <h3 style="font-weight: 800;color:#4156b5 ;">Phone Number</h3>
+
+      <h4 class="card-title">{{message.phoneNumber}}</h4>
+      <h3 style="font-weight: 800;color:#4156b5 ;">Message body</h3>
+
+
+      <p class="card-text">{{message.query}}</p>
+      <button class="btn btn-primary" (click)="respond(message.name)" *ngIf="userDetails.role==='Financial Analyst'">Respond</button>
+      <button class="btn btn-danger" (click)="deleteMessage(message._id)">Delete</button>
+
+    </div></div>
+  </div>
+</div>
+</div>
+<router-outlet></router-outlet>
