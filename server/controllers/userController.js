@@ -185,14 +185,14 @@ module.exports.addArticle = (req, res, next) => {
     article.body=req.body.body;
     article.role=req.body.role;
     article.id=req.body.id;
-
+    article.comments=req.body.comments;
 
     article.save((err, doc) => {
         if (!err)
             res.send(doc);
         else {
             if (err.code == 11000)
-                res.status(422).send(['Error.']);
+                res.status(422).send(err);
             else
                 return next(err);
         }

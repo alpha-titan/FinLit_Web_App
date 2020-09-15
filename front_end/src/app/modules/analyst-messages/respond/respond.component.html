@@ -1,4 +1,4 @@
-
+<div *ngIf="userDetails">
   <form #SendMessage="ngForm" style="text-align:center;" (ngSubmit)="SendMessage.valid && onSubmit(SendMessage)">
     <input type="hidden" #name="ngModel" [value]="userDetails._id" [(ngModel)]="userDetails._id" name="name" placeholder="Name"
       >
@@ -31,4 +31,4 @@
    <div class="alert" *ngIf="serverErrorMessages">
      {{serverErrorMessages}}
    </div>
-   
+</div>

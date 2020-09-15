@@ -2,14 +2,15 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Comment = require('./comment')
 var articleSchema = new mongoose.Schema({
-    id:{
-    type:String
-    },
+ 
     title: {
         type: String,
         required: 'Body can\'t be empty',
         unique: true
-    },
+    },  
+     id:{
+        type:String
+        },
     category: {
         type: String,
         
