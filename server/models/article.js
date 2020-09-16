@@ -26,6 +26,7 @@ var articleSchema = new mongoose.Schema({
         type: String,
         default:"in.png"
     },
+    
     comments: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Comment', index: true
     }],

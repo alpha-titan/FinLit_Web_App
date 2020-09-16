@@ -28,7 +28,7 @@
     *ngFor="let comment of articleDetails.comments">
 <strong><h3 style="text-decoration: underline #4156b5;font-weight: 600;">{{getUsername(comment.username)}}</h3></strong>
 <p>{{comment.body}}</p>
-<a *ngIf="userDetails.email===comment.username" routerLink="edit-comment/{{comment._id}}">edit</a>
+<a *ngIf="userDetails.email===comment.username" routerLink="./edit-comment/{{comment._id}}">edit</a>
 <input *ngIf="userDetails.email===comment.username" type="submit" (click)="deleteComment(comment._id)" value="delete">
 </div>
 

@@ -1,0 +1,36 @@
+<div *ngIf="userDetails">
+    <form #AddStockForm="ngForm" style="text-align:center;" (ngSubmit)="AddStockForm.valid && onSubmit(AddStockForm)">
+  
+    
+     <label for="name"  style="text-align:center;">Name</label>
+    <br>
+      <input type="text" #name="ngModel" [(ngModel)]="userService.selectedStock.name" name="name" placeholder="Name"
+        required [ngClass]="{'invalid-textbox' :AddStockForm.submitted && !title.valid }">
+      <div *ngIf="AddStockForm.submitted && title.errors">
+        <label *ngIf="title.errors.required" class="validation-message">This field is required.</label>
+        <label *ngIf="title.errors.pattern" class="validation-message">Invalid title .</label>
+      </div>
+      <br>
+     
+      <label for="description">Description</label>
+  <br>
+      <input type="text" style="height: 100px;" #description="ngModel" [(ngModel)]="userService.selectedStock.description" name="description"
+        placeholder="Description" minlength="5" required
+        [ngClass]="{'invalid-textbox' :AddStockForm.submitted && !body.valid }">
+      <div *ngIf="AddStockForm.submitted && body.errors">
+        <label *ngIf="body.errors.required" class="validation-message">This field is required.</label>
+        <label *ngIf="body.errors.minlength" class="validation-message">Enter atleast 20 characters.</label>
+      </div>
+     
+    
+      <input type="submit" value="Add Stock">
+    </form>
+  
+    <!-- Success message -->
+    <div class="success" *ngIf="showSuccessMessage">
+      Saved Successfully
+    </div>
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>
+  </div>

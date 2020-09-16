@@ -19,7 +19,6 @@ import { InvestingComponent } from './modules/investing/investing.component';
 import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component'
 
 import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
-import { TickerInfoComponent } from './modules/stocks/ticker-info/ticker-info.component';
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
@@ -28,6 +27,8 @@ import { AnalystsComponent } from './modules/analysts/analysts.component';
 import { MessageComponent } from './modules/message/message.component';
 import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
 import { LandingComponent } from './landing/landing.component';
+import { AddStockComponent } from './modules/add-stock/add-stock.component';
+
 import { RespondComponent } from './modules/analyst-messages/respond/respond.component';
 const routes: Routes = [{
   path: 'home',
@@ -59,11 +60,12 @@ const routes: Routes = [{
     path: 'users',
     component: UsersComponent
   },
-  
   {
-    path: 'st',
-    component: TickerInfoComponent
+    path: 'addStock',
+    component: AddStockComponent
   },
+  
+ 
   {
     path: 'articles',
     component: ManageArticlesComponent
@@ -73,18 +75,19 @@ const routes: Routes = [{
     component: ManageContactsComponent
   },
   {
-    path: 'mymessages',
-    component: AnalystMessagesComponent ,  children: [{ path: 'respond/:_id',
-    component: RespondComponent
-    }]
-  },
-  {
     path: 'article-details/:_id',
     component: ArticleDetailsComponent
     ,  children: [{ path: 'edit-comment/:_id',
     component: EditCommentComponent
     }]
   },
+  {
+    path: 'mymessages',
+    component: AnalystMessagesComponent ,  children: [{ path: 'respond/:_id',
+    component: RespondComponent
+    }]
+  },
+  
   {
     path: 'investing',
     component: InvestingComponent

@@ -9,6 +9,7 @@ const User = mongoose.model('User');
 const Article = mongoose.model('Article');
 const Comment = mongoose.model('Comment');
 const Message = mongoose.model('Message');
+const Stock = mongoose.model('Stock');
 
 const Contact = mongoose.model('Contact');
 
@@ -96,6 +97,18 @@ module.exports.deleteArticle=(req,res,next)=>{
         }
     );
 }
+module.exports.deleteStock=(req,res,next)=>{
+    Stock.findByIdAndDelete(
+        req.params._id,
+        function (error, result) {
+            if (error) {
+                throw error;
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    );
+}
 module.exports.deleteMessage=(req,res,next)=>{
     Message.findByIdAndDelete(
         req.params._id,
@@ -147,6 +160,21 @@ module.exports.getArticles=(req,res,next)=>{
 
     });
 }
+module.exports.getStocks=(req,res,next)=>{
+    Stock.find({})
+    .exec(function (err, stocks) {
+
+        var stockMap = [];
+
+        stocks.forEach(function (stock) {
+
+            stockMap.push(stock);
+        });
+
+        res.send(stockMap);
+
+    });
+}
 module.exports.getMessages=(req,res,next)=>{
     Contact.find({})
     .exec(function (err, contacts) {
@@ -174,6 +202,23 @@ module.exports.getMessagesAnalyst=(req,res,next)=>{
         });
 
         res.send(messageMap);
+
+    });
+}
+module.exports.addStock = (req, res, next) => {
+    var stock = new Stock();
+    stock.name = req.body.name;
+    stock.description=req.body.description;
+    
+    stock.save((err, doc) => {
+        if (!err)
+            res.send(doc);
+        else {
+            if (err.code == 11000)
+                res.status(422).send(err);
+            else
+                return next(err);
+        }
 
     });
 }

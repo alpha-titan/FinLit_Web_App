@@ -24,6 +24,9 @@ router.post('/register', ctrlUser.register);
 router.post('/send', ctrlUser.sendMessage);
 router.post('/sendMessage/:_id', ctrlUser.sendMessageAnalyst);
 router.get('/user/:_id', ctrlUser.userDetails);
+router.post('/addStock', ctrlUser.addStock);
+router.delete('/deleteStock/:_id', ctrlUser.deleteStock);
+router.get('/stocks', ctrlUser.getStocks);
 
 router.get('/users', ctrlUser.getUsers);
 router.post('/addArticle', ctrlUser.addArticle);

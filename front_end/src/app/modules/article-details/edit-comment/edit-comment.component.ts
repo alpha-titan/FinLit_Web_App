@@ -48,9 +48,7 @@ export class EditCommentComponent implements OnInit {
 
         form.resetForm();
         
-        let path = this.router.url.split("/edit-comment")[0];
-
-        this.router.navigate([path]);
+        window.location.reload()
 
 
       },

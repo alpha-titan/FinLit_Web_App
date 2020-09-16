@@ -9,6 +9,7 @@ require('./user');
 require('./article');
 require('./contact');
 require('./message');
+require('./stock');
 
 require('./comment');
 

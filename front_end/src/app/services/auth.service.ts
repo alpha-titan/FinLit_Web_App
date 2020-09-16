@@ -5,6 +5,7 @@ import { Article } from '../models/article.model';
 import { Contact } from '../models/contact.model';
 import { Comment } from '../models/comment.model';
 import { Message } from '../models/message.model';
+import { Stock } from '../models/stock.model';
 
 
 @Injectable({
@@ -45,6 +46,10 @@ export class AuthService {
   selectComment:Comment={
     username:'',
     body:''
+  }
+  selectedStock:Stock={
+    name:'',
+    description:''
   }
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }
@@ -119,6 +124,11 @@ export class AuthService {
 
     
   }
+  getStocks() {
+    return this.http.get<Stock[]>("http://localhost:3000/api/stocks")
+
+    
+  }
   getArticle(id:String) {
     return this.http.get<Article>("http://localhost:3000/api/article/"+id)
 
@@ -140,11 +150,18 @@ export class AuthService {
   deleteComment(id:String){
     return this.http.delete<Comment>("http://localhost:3000/api/deleteComment/"+id)
   }
+  deleteStock(id:String){
+    return this.http.delete<Stock>("http://localhost:3000/api/deleteStock/"+id)
+  }
   deleteMessage(id:String){
     return this.http.delete<Comment>("http://localhost:3000/api/deleteMessage/"+id)
   }
   addComment(comment:Comment,id:string){
     return this.http.post("http://localhost:3000/api/addComment/"+id,comment);
+
+  }
+  addStock(stock:Stock){
+    return this.http.post("http://localhost:3000/api/addStock/",stock);
 
   }
   sendMessage(message:Message,id:string){

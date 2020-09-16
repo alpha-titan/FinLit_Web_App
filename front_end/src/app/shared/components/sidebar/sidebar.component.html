@@ -40,6 +40,9 @@
             <mat-icon>message</mat-icon>
             Manage Messages
         </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/addStock" *ngIf="roleIsAdmin()">
+            <mat-icon>loupe</mat-icon>
+Add Stock        </a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/mymessages">
             <mat-icon>message</mat-icon>
 My Messages        </a>

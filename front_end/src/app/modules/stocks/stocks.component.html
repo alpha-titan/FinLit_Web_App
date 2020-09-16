@@ -1,13 +1,13 @@
-<div class="container">
-<div class="stocks-div">
-  <div *ngFor="let stock of stocks">
-      <div class="stock-div" (click)="stockClicked(stock.symbol)">
-          <span class="symbol"  >{{ stock.symbol }}</span>
-          <span class="company-name">({{ stock.name }})</span>
-      </div>
+<h2>Stocks</h2>
+<div class="container" >
+    <div class="row">
+          
+<div class="card" style="width: 18rem;" *ngFor="let stock of stocks">
+
+    <div class="card-body">
+      <h3 class="card-title" style="color:#4156b5">{{stock.name}}</h3>
+      <p class="card-text">{{stock.description}}</p>
+      <button class="btn btn-danger" (click)="deleteStock(stock._id)" *ngIf="roleIsAdmin()"> Delete</button>
+    </div>
   </div>
-</div>
-<div class="ticker-info-div">
-  <ticker-info [ticker]="selectedStock" *ngIf="selectedStock !== ''"></ticker-info>
-</div>
 </div>

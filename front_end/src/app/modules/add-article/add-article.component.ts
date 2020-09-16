@@ -46,7 +46,7 @@ export class AddArticleComponent implements OnInit {
         setTimeout(() => this.showSuccessMessage = true, 4000);
         form.resetForm();
         
-        this.router.navigate(['/posts']);
+        this.router.navigate(['/home/posts']);
 
 
       },
