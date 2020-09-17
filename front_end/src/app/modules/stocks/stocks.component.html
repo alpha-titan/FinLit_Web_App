@@ -8,6 +8,8 @@
       <h3 class="card-title" style="color:#4156b5">{{stock.name}}</h3>
       <p class="card-text">{{stock.description}}</p>
       <button class="btn btn-danger" (click)="deleteStock(stock._id)" *ngIf="roleIsAdmin()"> Delete</button>
+      <button class="btn btn-primary" (click)="editStock(stock._id)" *ngIf="roleIsAdmin()"> Edit</button>
+
     </div>
   </div>
 </div>

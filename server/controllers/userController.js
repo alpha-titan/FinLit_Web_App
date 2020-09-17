@@ -340,6 +340,15 @@ module.exports.updateComment = (req, res, next) => {
         if (doc) return res.send(doc);
     })
 }
+module.exports.updateStock = (req, res, next) => {
+    const id = req.params._id;
+    const newStockData = req.body;
+   
+    Stock.findByIdAndUpdate(id, { $set: newStockData }, (err, doc) => {
+        if (err) return res.send(err.message)
+        if (doc) return res.send(doc);
+    })
+}
 module.exports.updateArticle = (req, res, next) => {
     const id = req.params._id;
     const newArticleData = req.body;
@@ -371,6 +380,19 @@ module.exports.commentDetails = (req, res, next) => {
             }
             else {
                 return res.status(200).json({ status: true, comment: _.pick(comment, ['body','username', '_id']) });
+            }
+        }
+        );
+}
+module.exports.stockDetails = (req, res, next) => {
+    Stock.findOne({ _id: req.params._id })
+        .exec(function (err, stock) {
+            if (!stock) {
+
+                return res.status(404).json({ status: false, message: 'Stock record not found.', err: err, id: req._id });
+            }
+            else {
+                return res.status(200).json({ status: true, stock: _.pick(stock, ['description','name', '_id']) });
             }
         }
         );
@@ -419,18 +441,7 @@ module.exports.uploadImage = (req, res) => {
         })
     }
 }
-    const finnhub = require('finnhub');
- 
-    const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-    api_key.apiKey = "bt78he748v6ppe5nvfsg" // Replace this
-    const finnhubClient = new finnhub.DefaultApi()
-     
-    // Stock candles
-    finnhubClient.stockCandles("AAPL", "D", 1590988249, 1591852249, {}, (error, data, response) => {
-        console.log(data)
-    });
-     
-   
+
      
  
      

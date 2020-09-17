@@ -39,6 +39,7 @@ import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-mes
 import { LandingComponent } from './landing/landing.component';
 import { RespondComponent } from './modules/analyst-messages/respond/respond.component';
 import { AddStockComponent } from './modules/add-stock/add-stock.component';
+import { EditStockComponent } from './modules/edit-stock/edit-stock.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { AddStockComponent } from './modules/add-stock/add-stock.component';
     AnalystMessagesComponent,
     LandingComponent,
     RespondComponent,
-    AddStockComponent
+    AddStockComponent,
+    EditStockComponent
   ],
   imports: [
     FormsModule,

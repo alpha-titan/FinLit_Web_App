@@ -35,6 +35,7 @@ router.delete('/deleteUser/:_id', ctrlUser.deleteUser);
 router.get('/article/:_id', ctrlUser.articleDetails);
 router.get('/contacts', ctrlUser.getMessages);
 router.get('/messages', ctrlUser.getMessagesAnalyst);
+router.get('/stock/:_id', ctrlUser.stockDetails);
 
 router.post('/addComment/:_id', ctrlUser.addComment);
 router.get('/comment/:_id', ctrlUser.commentDetails);
@@ -43,6 +44,7 @@ router.delete('/deleteComment/:_id', ctrlUser.deleteComment);
 router.get('/articles', ctrlUser.getArticles);
 router.put('/updateArticle/:_id', ctrlUser.updateArticle)
 router.put('/updateComment/:_id', ctrlUser.updateComment)
+router.put('/updateStock/:_id', ctrlUser.updateStock)
 
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);

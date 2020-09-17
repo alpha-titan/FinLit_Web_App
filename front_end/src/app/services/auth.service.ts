@@ -107,6 +107,9 @@ export class AuthService {
   } updateComment(comment: Comment, _id: String) {
     return this.http.put('http://localhost:3000/api/updateComment/' + _id, comment);
   }
+  updateStock(stock: Stock, _id: String) {
+    return this.http.put('http://localhost:3000/api/updateStock/' + _id, stock);
+  }
   getUsers() {
     return this.http.get<User[]>("http://localhost:3000/api/users")
 
@@ -139,6 +142,10 @@ export class AuthService {
   }
   getComment(id:String) {
     return this.http.get<Comment>("http://localhost:3000/api/comment/"+id)
+
+  }
+  getStock(id:String) {
+    return this.http.get<Stock>("http://localhost:3000/api/stock/"+id)
 
   }
   deleteArticle(id:String){

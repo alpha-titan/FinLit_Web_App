@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { Stock } from 'src/app/models/stock.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-stocks',
   templateUrl: './stocks.component.html',
@@ -10,7 +11,7 @@ import { Stock } from 'src/app/models/stock.model';
 })
 export class StocksComponent implements OnInit {
   
-  constructor(private userService:AuthService) { }
+  constructor(private userService:AuthService,private router:Router) { }
   stocks:Stock[]
   userDetails;
   ngOnInit() {
@@ -36,6 +37,8 @@ export class StocksComponent implements OnInit {
     });
     window.location.reload()
 }
-
+editStock(id:String) {
+  this.router.navigate(["/home/editStock",id])
+}
 
 }
