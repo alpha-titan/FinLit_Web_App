@@ -1,8 +1,7 @@
 <section style="width: 90%;margin:auto">
-    <nav class="navbar navbar-expand-lg navbar-light" style="padding:10px;background-color: transparent;">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+    <!---menu desktop-->
+    <nav class="navbar navbar-expand-lg navbar-light"  id="navDes" style="padding:10px;background-color: transparent;">
+       
         <a class="navbar-brand" href="#"><img src="../../assets/img/Logo.png" alt="" width="70px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +10,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav mr-auto" style="margin-left: 60%;">
+            <ul class="navbar-nav mr-auto" id="menu">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                 </li>
@@ -32,10 +31,46 @@
 
         </div>
     </nav>
-    <div class="row" style="padding-top: 5%;padding-bottom:12%">
+        <!---menu mobile-->
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;" id="navMob">
+        <a class="navbar-brand" href="#"><img src="../../assets/img/Logo.png" alt="" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto" id="menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mission<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Team<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login<span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+
+          </div>
+        </nav>
+        <br><br>
+        <br>
+    <!---first section-->
+
+    <div class="row" style="padding-top: 1%;padding-bottom:12%">
         <div class="col-lg-5" style="padding-top: 10%;">
-            <h1 style="font-size:45px">Start <font style="color:rgb(0, 119, 255)">your journey</font> to Financial <font style="color:#4cfe3c">freedom</font>
+            <div class="fontAnimation">
+            <h1 style="font-size:45px">Start <font style="color:rgb(0, 110, 255)">your journey</font> to Financial <font
+                    style="color:#3cfe56">freedom</font>
             </h1>
+        </div>
             <h4>It is a platform build for people, to learn more about stockamrket and investing in them.
 
             </h4>
@@ -47,6 +82,8 @@
                 alt=""></div>
 
     </div>
+        <!---section-->
+
     <div style="text-align:center;margin-bottom:100px">
         <h1 style="font-size: 40px;">Services</h1>
         <h3>FinLit makes it easier for you to ...</h3>
@@ -56,26 +93,26 @@
 
             <div class="col-lg" style="padding: 10px;text-align:center;justify-content:center">
                 <div style="padding:10px;border-radius:10px;background-color:#f1f1f1;">
-                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-users" style="color:white;font-size:25px;"></i></div>
+                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-bell" style="color:white;font-size:25px;"></i></div>
                     <h6 style="margin-top:30px;font-size: larger;">Talk with experienced analysts
                     </h6>
-                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed minima perferendis magnam, ducimus cumque doloribus consequatur optio quos error officiis tempore aspernatur vero rem nesciunt eum dolore natus assumenda porro!</p>
+                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sint tenetur laborum, maiores dignissimos unde. Impedit assumenda dolorem mollitia quisquam, voluptatum autem! Aspernatur eaque suscipit dolorum deleniti eveniet nemo temporibus.</p>
                 </div>
             </div>
             <div class="col-lg" style="padding: 10px;text-align:center;justify-content:center">
                 <div style="padding:10px;border-radius:10px;background-color:#f1f1f1;">
-                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-line-chart" style="color:white;font-size:25px;"></i></div>
+                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-bell" style="color:white;font-size:25px;"></i></div>
                     <h6 style="margin-top:30px;font-size: larger;">Get to know the best stocks
                     </h6>
-                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid explicabo suscipit enim unde assumenda veniam in quas voluptatem similique, at voluptas eaque labore expedita. Expedita voluptatum debitis iusto odio nemo.</p>
+                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus nobis similique blanditiis modi mollitia autem non libero, repellat repellendus veniam quidem maiores fuga veritatis magni explicabo deserunt cum aliquid!</p>
                 </div>
             </div>
             <div class="col-lg" style="padding: 10px;text-align:center;justify-content:center">
                 <div style="padding:10px;border-radius:10px;background-color:#f1f1f1;">
-                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-graduation-cap" style="color:white;font-size:25px;"></i></div>
+                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-bell" style="color:white;font-size:25px;"></i></div>
                     <h6 style="margin-top:30px;font-size: larger;">Learn all about stock market
                     </h6>
-                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt excepturi animi optio nemo consequatur id atque illum eum nobis reprehenderit tenetur doloribus ex laboriosam error nam hic voluptatibus, cupiditate odit!</p>
+                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque rerum et fugiat qui obcaecati excepturi itaque ipsam, facilis ea dicta aliquam omnis architecto quas commodi tempora laborum aliquid debitis quo!</p>
                 </div>
             </div>
 
@@ -84,22 +121,26 @@
 
         </div>
     </div>
-    <section style="height: 564px">
+            <!---section-->
+
+    <section id="last">
         <div class="row">
-            <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_success_factors_fay0.svg" alt=""></div>
+            <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_financial_data_es63.svg" alt=""></div>
             <div class="col-lg-5" style="padding-top: 10%;"><h1 style="font-size:45px">Maximize your chances of good returns
-            </h1><h4 style="font-size:20px;color:gray">Make your profile stand out by working on the project company is already working on.
+            </h1><h4 style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint atque voluptatibus, mollitia fuga vero ducimus dolores deserunt iure consectetur ipsum enim error explicabo iusto aspernatur nihil sequi qui aut molestias?
 
             </h4></div>
 
         </div>
 
     </section>
-    <section style="height: 564px">
+            <!---section-->
+
+    <section id="last">
         <div class="row">
             <div class="col-lg-5" style="padding-top: 10%;"><h1 style="font-size:45px">New to stock market?
 
-            </h1><h4 style="font-size:20px;color:gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perspiciatis eveniet recusandae aliquam placeat. Sit vero eius voluptatibus voluptatum commodi officia iusto ea ipsam. Incidunt rerum facilis deserunt reiciendis a!
+            </h1><h4 style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum quisquam quam laborum unde, fugiat minima reprehenderit eligendi doloremque dolores, provident quis nemo, nesciunt ratione aut est ea quae illo.
 
             </h4></div>
             <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_printing_invoices_5r4r.svg" alt=""></div>
@@ -109,15 +150,17 @@
     </section>
     
 </section>
-<section style="height: 564px;background-color:#f1f1f1;text-align:center;padding:10px">
+        <!---section-->
+
+<section id="last" style="background-color:#f1f1f1;text-align:center;padding:10px">
     
     <h1 style="font-size: 40px;">Our mission</h1>
 
     <div class="row">
-        <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_financial_data_es63.svg" alt=""></div>
+        <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_success_factors_fay0.svg" alt=""></div>
 
-        <div class="col-lg-5" style="padding-top: 10%;"><h4 style="font-weight:200;font-size:20px;color:gray">Our mission: <br> <br><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam maiores laudantium consectetur libero, veniam dolorem est, impedit tempora earum odit voluptatum vero adipisci laborum repudiandae consequuntur molestiae tenetur distinctio!
-           <br> <br><i class="fa fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, ipsa. Cupiditate saepe impedit ipsa repellat dolores quaerat provident nam voluptate soluta. Rem ratione aliquam distinctio beatae! Officiis ut cupiditate dolore.
+        <div class="col-lg-5" style="padding-top: 10%;"><h4 style="font-weight:200;font-size:20px;color:gray">Our mission: <br> <br><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet corrupti enim sed natus repudiandae est. Voluptatem minus aliquid voluptatum molestiae, pariatur, optio, velit unde facilis eligendi provident laudantium aut alias.
+           <br> <br><i class="fa fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, sapiente deserunt nesciunt quasi pariatur impedit cumque magnam iure illo, tempora, dolorum aspernatur numquam in eos minus quod. Eligendi, repellat recusandae?
 
 
 
@@ -129,6 +172,10 @@
     </div>
 
 </section>
+        <!---section footer-->
+<br>
+<br>
+<br><br>
 <section style="text-align:center;padding-top:20px">
     <div class="row" style="text-align:center ;">
 <div class="col"></div><div class="col-8">

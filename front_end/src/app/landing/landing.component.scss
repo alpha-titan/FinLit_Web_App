@@ -97,3 +97,54 @@ h3{
     display: none;
   }
 }
+@media only screen and (min-width: 1024px) {
+ #last{
+   height:564px;
+ }
+ #menu{
+   margin-left:60% ;
+ }
+ #navMob{
+   display: none;
+ }
+}
+@media only screen and (max-width: 1024px) {
+ #navDes{
+   display: none;
+ }
+ }
+ #icon{
+  
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  
+ }
+ @media (max-width: 992px) {
+  .navbar-collapse {
+      position: fixed;
+      top: 70px;
+      right: 0;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      width: 30%;
+      height: 100%;
+      background-color:white;
+  }
+
+  .navbar-collapse.collapsing {
+      right: -75%;
+      transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+      right: 0;
+      transition: right 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+      transition: right 500ms ease-in-out;
+  }
+}
