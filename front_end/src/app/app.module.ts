@@ -40,7 +40,7 @@ import { LandingComponent } from './landing/landing.component';
 import { RespondComponent } from './modules/analyst-messages/respond/respond.component';
 import { AddStockComponent } from './modules/add-stock/add-stock.component';
 import { EditStockComponent } from './modules/edit-stock/edit-stock.component';
-
+import { StickyNavModule } from 'ng2-sticky-nav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +77,8 @@ import { EditStockComponent } from './modules/edit-stock/edit-stock.component';
     ToastrModule.forRoot(), // ToastrModule added,
     FileUploadModule,
     NgSearchPipe,
-    ValidateEqualModule
+    ValidateEqualModule,
+    StickyNavModule
 
  
   ],

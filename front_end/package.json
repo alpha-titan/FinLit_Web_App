@@ -29,6 +29,7 @@
     "ng-search-pipe": "^1.0.2",
     "ng-validate-equal": "^1.0.4",
     "ng2-file-upload": "^1.4.0",
+    "ng2-sticky-nav": "^9.0.0",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

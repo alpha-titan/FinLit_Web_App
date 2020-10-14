@@ -1,126 +1,144 @@
+<section style="width: 90%;margin:auto">
+    <nav class="navbar navbar-expand-lg navbar-light" style="padding:10px;background-color: transparent;">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+        <a class="navbar-brand" href="#"><img src="../../assets/img/Logo.png" alt="" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <section style="width: 95%;margin-top: 30px;">
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+            <ul class="navbar-nav mr-auto" style="margin-left: 60%;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mission<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Team<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login<span class="sr-only">(current)</span></a>
+                </li>
 
-                <a class="navbar-brand" href="#"><img src="../../assets/img/Logo.png" alt="" width="100px"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav mr-auto" style="margin-left: 280px;">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Developers<span class="sr-only">(current)</span></a>
-                        </li>
-
-
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-success my-2 my-sm-0" (click)="router1()" type="submit" id="button">Login</button>
-                        </form>
-                </div>
-            </nav>
-        </section>
-        <div class="Homepage">
-            <h1 style="color:white;font-size: 60px;">Your portal to <br> financial freedom.</h1>
-            <br>
-            <p style="color:white;font-size:20px;">With FinLit, explore the world of Indian stock markets and give
-                your<br>investments unbeatable results.</p><br>
-            <Button class="button1"(click)="router1()"> Click here to get started</Button>
+            </ul>
 
         </div>
+    </nav>
+    <div class="row" style="padding-top: 5%;padding-bottom:12%">
+        <div class="col-lg-5" style="padding-top: 10%;">
+            <h1 style="font-size:45px">Start <font style="color:rgb(0, 119, 255)">your journey</font> to Financial <font style="color:#4cfe3c">freedom</font>
+            </h1>
+            <h4>It is a platform build for people, to learn more about stockamrket and investing in them.
+
+            </h4>
+            <button (click)="router2()"
+                style="background-color: #4285f4;color:white;border:none;border-radius:20px;padding:10px">Register
+                Now</button>
+        </div>
+        <div class="col-lg-7"><img src="../../assets/images/undraw_finance_0bdk.svg" style="opacity: 90%;" width="95%"
+                alt=""></div>
+
+    </div>
+    <div style="text-align:center;margin-bottom:100px">
+        <h1 style="font-size: 40px;">Services</h1>
+        <h3>FinLit makes it easier for you to ...</h3>
         <br><br>
-        <section>
-            <p style="color:grey;font-size:small">
-                WHAT WE BELIEVE IN
-            </p>
-            <h2>Your hard-earned money deserves more. Make it <br>grow by safely investing in stocks. Your one-stop
-                <br>place to get started!
-            </h2>
-            <hr width="80%">
-        </section>
-        <section style="width: 95%;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4" style="padding-top: 5%;">
-                        <p style="color:grey;font-size:medium;float:left;">
-                            ABOUT </p>
-                        <br><br>
-                        <h2 style="float: left;">Who we are
-                        </h2><br><br>
-                        <p style="float: left;font-size: medium;text-align: left;color: gray;letter-spacing: 1px;">We
-                            are here to help you understand the importance of investing and how you can use the stock
-                            market to gain great returns on your investment.</p>
-                           <button class="button2" (click)="router1()">LEARN MORE</button>
-                    </div>
-                    <div class="col-8">
-                        <img src="../../assets/img/bg2.jpg" alt="">
-                    </div>
+        <div class="row" style="   text-align: center;">
+            <div class="col-lg-1"></div>
+
+            <div class="col-lg" style="padding: 10px;text-align:center;justify-content:center">
+                <div style="padding:10px;border-radius:10px;background-color:#f1f1f1;">
+                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-users" style="color:white;font-size:25px;"></i></div>
+                    <h6 style="margin-top:30px;font-size: larger;">Talk with experienced analysts
+                    </h6>
+                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed minima perferendis magnam, ducimus cumque doloribus consequatur optio quos error officiis tempore aspernatur vero rem nesciunt eum dolore natus assumenda porro!</p>
                 </div>
             </div>
-        </section>
-        <section>
-            <br>
-            <img src="../../assets/img/bg3.png" alt="" width="80%">
-        </section>
-        <section style="text-align: center;"> <br>
-            <p style="color:grey;font-size:small;">
-                ABOUT US </p>
-            <h2>Company news
-            </h2><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-1"></div>
-
-                  <div class="col-5">
-                    <h2 style="float:left;text-align: left;">Our Goal</h2>
-                    <p style="color:grey;font-size:small;float:left">
-                        FEB 21, 2019 </p><br>
-                        <p style="color:grey;font-size:small;float:left;text-align: left;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-
- </p>
-                  </div>
-                  <div class="col-5">
-                    <h2 style="float:left;text-align: left;">Our Team details</h2>
-                    <p style="color:grey;font-size:small;float:left">
-                        FEB 21, 2019 </p><br>
-                        <p style="color:grey;font-size:small;float:left;text-align: left;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-
- </p>
-                  </div>
-                  <div class="col-1"></div>
-
+            <div class="col-lg" style="padding: 10px;text-align:center;justify-content:center">
+                <div style="padding:10px;border-radius:10px;background-color:#f1f1f1;">
+                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-line-chart" style="color:white;font-size:25px;"></i></div>
+                    <h6 style="margin-top:30px;font-size: larger;">Get to know the best stocks
+                    </h6>
+                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid explicabo suscipit enim unde assumenda veniam in quas voluptatem similique, at voluptas eaque labore expedita. Expedita voluptatum debitis iusto odio nemo.</p>
                 </div>
-                <br><br>
-                <div class="row">
-                <div class="col-3"></div>
-
-                
-                  <div class="col-4"></div>
+            </div>
+            <div class="col-lg" style="padding: 10px;text-align:center;justify-content:center">
+                <div style="padding:10px;border-radius:10px;background-color:#f1f1f1;">
+                    <div style="margin-left:40%;margin-top:-45px;background-color: #4285f4;border-radius:50%;width:64px;height:64px;text-align:center;justify-content:center;padding-top:20px"><i class="fa fa-graduation-cap" style="color:white;font-size:25px;"></i></div>
+                    <h6 style="margin-top:30px;font-size: larger;">Learn all about stock market
+                    </h6>
+                    <p style="font-weight: 300;letter-spacing:0.1em;opacity:90%;line-height:30px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt excepturi animi optio nemo consequatur id atque illum eum nobis reprehenderit tenetur doloribus ex laboriosam error nam hic voluptatibus, cupiditate odit!</p>
                 </div>
-               
+            </div>
+
+            <div class="col-lg-1"></div>
+
+
+        </div>
+    </div>
+    <section style="height: 564px">
+        <div class="row">
+            <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_success_factors_fay0.svg" alt=""></div>
+            <div class="col-lg-5" style="padding-top: 10%;"><h1 style="font-size:45px">Maximize your chances of good returns
+            </h1><h4 style="font-size:20px;color:gray">Make your profile stand out by working on the project company is already working on.
+
+            </h4></div>
+
+        </div>
+
+    </section>
+    <section style="height: 564px">
+        <div class="row">
+            <div class="col-lg-5" style="padding-top: 10%;"><h1 style="font-size:45px">New to stock market?
+
+            </h1><h4 style="font-size:20px;color:gray">Set a goal desiring to work in your dream company or startup. We will walk with you along your journey and help you in securing the place in your dream company.
+
+            </h4></div>
+            <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_printing_invoices_5r4r.svg" alt=""></div>
+
+        </div>
+
+    </section>
+    
+</section>
+<section style="height: 564px;background-color:#f1f1f1;text-align:center;padding:10px">
+    
+    <h1 style="font-size: 40px;">Our mission</h1>
+
+    <div class="row">
+        <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_financial_data_es63.svg" alt=""></div>
+
+        <div class="col-lg-5" style="padding-top: 10%;"><h4 style="font-weight:200;font-size:20px;color:gray">Our mission: <br> <br><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam maiores laudantium consectetur libero, veniam dolorem est, impedit tempora earum odit voluptatum vero adipisci laborum repudiandae consequuntur molestiae tenetur distinctio!
+           <br> <br><i class="fa fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, ipsa. Cupiditate saepe impedit ipsa repellat dolores quaerat provident nam voluptate soluta. Rem ratione aliquam distinctio beatae! Officiis ut cupiditate dolore.
+
+
+
+        </h4>
+        <button (click)="router2()"
+        style="background-color: #4285f4;color:white;border:none;border-radius:20px;padding:10px">Register
+        Now</button></div>
+
+    </div>
+
+</section>
+<section style="text-align:center;padding-top:20px">
+    <div class="row" style="text-align:center ;">
+<div class="col"></div><div class="col-8">
+    <a href="" style="display: inline;">Privacy Policy</a>
+    <a href="" style="display: inline;margin-left:10px">Feedback</a>
+
+    <a href="" style="display: inline;margin-left:10px">Contact Us</a>
+</div><div class="col"></div>
+
 </div>
-        </section>
-        <section style="padding-top: 5%;width: 95%;">
-            <div class="Homepage2">
-                <h1 style="color:black;font-size: 40px;">Don't let doubt hold you back.</h1>
-            <br>
-            <p style="color:black;font-size:18px;">With our content, get educated about the idea of stock market<br>investing and never look back.</p><br>
-            <Button class="button4"(click)="router1()">Start Learning now!!!</Button>
-            </div>
-        </section>
-
-
-
+<h4 style="color:grey">Copyright ©2020 All rights reserved</h4>
+    
+</section>
