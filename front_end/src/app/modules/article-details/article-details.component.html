@@ -5,7 +5,7 @@
     <img  style="width:50%"  *ngIf="articleDetails.image" src={{getImageName(articleDetails.image)}} class="card-img-top" alt="...">            
     <h1>{{articleDetails.title}}</h1>
    
-    <h3>{{articleDetails.body}}</h3>
+    <div  [innerHTML]="articleDetails.body"></div>    
 
 <form #AddArticleForm="ngForm"  style="text-align:center;" (ngSubmit)="AddArticleForm.valid && onSubmit(AddArticleForm)">
     <input type="hidden" [value]="userDetails.email"  #username="ngModel" name="username" [(ngModel)]="userDetails.email">

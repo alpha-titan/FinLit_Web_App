@@ -28,13 +28,10 @@
     <br>
     <label for="body">Body</label>
 <br>
-    <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="userService.selectedArticle.body" name="body"
+    <editor #body="ngModel" [(ngModel)]="userService.selectedArticle.body" name="body"
       placeholder="Body" minlength="20" required
-      [ngClass]="{'invalid-textbox' :AddArticleForm.submitted && !body.valid }">
-    <div *ngIf="AddArticleForm.submitted && body.errors">
-      <label *ngIf="body.errors.required" class="validation-message">This field is required.</label>
-      <label *ngIf="body.errors.minlength" class="validation-message">Enter atleast 20 characters.</label>
-    </div>
+      [ngClass]="{'invalid-textbox' :AddArticleForm.submitted && !body.valid }"></editor>
+    
    
   
     <input type="submit" value="Add Article" (click)="uploader.uploadAll()">

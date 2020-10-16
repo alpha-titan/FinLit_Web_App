@@ -8,11 +8,11 @@
           <h4>Title</h4>
     <input type="text" [value]="articleDetails.title" #title="ngModel" [(ngModel)]="articleDetails.title" name="title" placeholder="Title">
     <h4>Body</h4>
-        <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="articleDetails.body" name="body"
+        <editor  #body="ngModel" [(ngModel)]="articleDetails.body" name="body"
           placeholder="Body" minlength="20" required
-          [ngClass]="{'invalid-textbox' :editArticleForm.submitted && !body.valid }">
+          [ngClass]="{'invalid-textbox' :editArticleForm.submitted && !body.valid }"></editor>
        
-      
+      <br>
   
     <input type="submit" value="Edit" (click)="uploader.uploadAll()">
   </form>

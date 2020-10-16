@@ -15,7 +15,7 @@
         <td>{{article._id}}</td>
         <td>{{article.title}}</td>
         <td>{{article.category}}</td>
-        <td><input type="submit"  routerLink="/home/editArticle/{{article._id}}" value="Edit" *ngIf="article.role==='Admin'"></td>
+        <td><input type="submit"  routerLink="/home/editArticle/{{article._id}}" value="Edit"></td>
 
         <td><input type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
 
@@ -40,7 +40,7 @@
       <td>{{article._id}}</td>
       <td>{{article.title}}</td>
       <td>{{article.category}}</td>
-      <td><input type="submit"  routerLink="/editArticle/{{article._id}}" value="Edit"></td>
+      <td><input type="submit"  routerLink="/home/editArticle/{{article._id}}" value="Edit"></td>
 
       <td><input type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
 
