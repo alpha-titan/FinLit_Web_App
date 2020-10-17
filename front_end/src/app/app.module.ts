@@ -42,6 +42,8 @@ import { AddStockComponent } from './modules/add-stock/add-stock.component';
 import { EditStockComponent } from './modules/edit-stock/edit-stock.component';
 import { StickyNavModule } from 'ng2-sticky-nav';
 import { EditorModule } from "@tinymce/tinymce-angular";
+import { CommonModule } from '@angular/common';
+import { StockDetailsComponent } from './modules/stock-details/stock-details.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { EditorModule } from "@tinymce/tinymce-angular";
     LandingComponent,
     RespondComponent,
     AddStockComponent,
-    EditStockComponent
+    EditStockComponent,
+    StockDetailsComponent
   ],
   imports: [
     FormsModule,
@@ -81,7 +84,8 @@ import { EditorModule } from "@tinymce/tinymce-angular";
     NgSearchPipe,
     ValidateEqualModule,
     StickyNavModule,
-    EditorModule
+    EditorModule,
+    CommonModule
 
  
   ],

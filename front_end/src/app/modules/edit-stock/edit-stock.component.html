@@ -5,11 +5,11 @@
           <h4>Name</h4>
     <input type="text" [value]="stockDetails.name" #name="ngModel" [(ngModel)]="stockDetails.name" name="name" placeholder="Name">
     <h4>Body</h4>
-        <input type="text" style="height: 100px;" #description="ngModel" [(ngModel)]="stockDetails.description" name="description"
+        <editor #description="ngModel" [(ngModel)]="stockDetails.description" name="description"
           placeholder="description" minlength="5" required
           [ngClass]="{'invalid-textbox' :editArticleForm.submitted && !description.valid }">
        
-      
+      </editor>
   
     <input type="submit" value="Edit">
   </form>

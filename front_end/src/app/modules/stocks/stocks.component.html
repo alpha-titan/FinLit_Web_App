@@ -1,14 +1,20 @@
 <h2>Stocks</h2>
 <div class="container" >
-  <div class="row justify-content-center">
-    <div class="card shadow " style="width: 18rem;" *ngFor="let stock of stocks">
-      <div class="card-body text-center">
-        <img src="../../../assets/img/Logo.png" class="card-img-top" style="height: 50px; width: 50px;" alt="">
-        <h3 class="card-title text-dark" style="color:#4156b5">{{stock.name}}</h3>
-          <p class="card-text">{{stock.description}}</p>
-            <button class="btn btn-danger" (click)="deleteStock(stock._id)" *ngIf="roleIsAdmin()"> Delete</button>
-            <button class="btn btn-primary" (click)="editStock(stock._id)" *ngIf="roleIsAdmin()"> Edit</button>
-        </div>
-      </div>
+    <div class="row">
+          
+<div class="card" style="width: 17rem;" *ngFor="let stock of stocks">
+
+    <div class="card-body text-center">
+      <img src="../../../assets/img/Logo.png" class="card-img-top" style="height: 50px; width: 50px;" alt="">
+      <br><br>
+      <h3 class="card-title text-dark" style="color:#4156b5">{{stock.name}}</h3>
+          <div  [innerHTML]="stock.description.substr(0,500)"></div>    
+          <br>
+          <a href="#" class="btn btn-primary" style="background-color:#4156b5;" routerLink="/home/stock/{{stock._id}}">Read More</a>
+<br><br>
+      <button class="btn btn-danger" (click)="deleteStock(stock._id)" *ngIf="roleIsAdmin()"> Delete</button>
+      <button class="btn btn-primary" (click)="editStock(stock._id)" *ngIf="roleIsAdmin()"> Edit</button>
+
+    </div>
   </div>
 </div>

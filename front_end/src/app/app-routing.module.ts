@@ -17,7 +17,7 @@ import { UsersComponent } from './modules/users/users.component';
 import { AddArticleComponent } from './modules/add-article/add-article.component';
 import { InvestingComponent } from './modules/investing/investing.component';
 import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component'
-
+import {StockDetailsComponent} from './modules/stock-details/stock-details.component';
 import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
@@ -35,7 +35,11 @@ const routes: Routes = [{
   path: 'home',
   component: DefaultComponent,
   canActivate: [AuthGuard],
-  children: [{
+  children: [ {
+    path: 'stock/:_id',
+    component: StockDetailsComponent
+  },
+{
     path: 'dashboard',
     component: DashboardComponent,
    }, {
@@ -104,6 +108,7 @@ const routes: Routes = [{
     path: 'message/:_id',
     component: MessageComponent
   },
+ 
   {
     path: 'Analysts',
     component: AnalystsComponent

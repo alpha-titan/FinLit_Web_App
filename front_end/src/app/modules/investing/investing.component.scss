@@ -1,0 +1,15 @@
+.card{
+    margin: 2%;
+    border-radius: 20px;
+    border-color: rgb(0, 225, 255);
+    box-shadow: 5px 5px 5px rgb(0, 174, 255);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+.card:hover{
+    background: #3cb7e7;
+    color: rgb(128, 94, 0);
+    
+}

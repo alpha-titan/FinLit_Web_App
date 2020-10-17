@@ -1,8 +1,9 @@
+<div class = "container">
 <div *ngIf="userDetails">
 <table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
     <thead >
       <tr style="background-color:#4156B5;">
-        <th scope="col">Id</th>
+        
         <th scope="col">Title</th>
         <th scope="col">Category</th>
         <th scope="col">Edit</th>
@@ -12,7 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let article of articles">
-        <td>{{article._id}}</td>
+        
         <td>{{article.title}}</td>
         <td>{{article.category}}</td>
         <td><input type="submit"  routerLink="/home/editArticle/{{article._id}}" value="Edit"></td>
@@ -47,4 +48,5 @@
     </tr>
   </tbody>
 </table>
+</div>
 </div>
